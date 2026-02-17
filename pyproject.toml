@@ -1,0 +1,31 @@
+[project]
+name = "chainarchive"
+version = "0.0.1"
+authors = [
+  { name="Adoxotes", email="adoxotes@proton.me" },
+]
+description = "Decentralized storage for infrequent data"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies=[
+  "web3>=7.14.0",
+  "blake3>=1.0.8",
+  "cryptography>=44.0.0",
+  "pykeepass>=4.1.1",
+  "brotli>=1.2.0"
+]
+license = "GPL-3.0"
+license-files = ["LICENCE"]
+
+[project.urls]
+Homepage = "https://github.com/adoxotes/chainarchive"
+Issues = "https://github.com/adoxotes/chainarchive/issues"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["--import-mode=importlib"]
+filterwarnings = ["ignore::DeprecationWarning"]
