@@ -14,10 +14,7 @@ contract ChainArchiveAnchor {
      * @param id Indexed identifier
      * @param slots Array of bytes32 values
      */
-    event Entry(
-        bytes32 indexed id,
-        bytes32[] slots
-    );
+    event Entry(bytes32 indexed id, bytes32[] slots);
 
     /**
      * @dev Anchor a batch of data points under a single ID.

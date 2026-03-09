@@ -56,4 +56,12 @@ contract ChainArchiveAnchorTest is Test {
         emit Entry(id, slots);
         anchor.anchorData(id, slots);
     }
+
+    function testFuzzAnchorData(bytes32 id, bytes32[] calldata slots) public {
+        vm.assume(slots.length > 0 && slots.length <= anchor.MAX_SLOTS());
+
+        vm.expectEmit(true, false, false, true);
+        emit Entry(id, slots);
+        anchor.anchorData(id, slots);
+    }
 }
